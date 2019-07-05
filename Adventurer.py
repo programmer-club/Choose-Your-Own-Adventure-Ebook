@@ -1,7 +1,6 @@
 import random
 import sys
 import time
-
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
@@ -34,11 +33,33 @@ if sure is "y":
         char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
         line = 1
+        def nln:
+            line = + 1
         while save_name is not char_name:
             save_name = saves.readline(line)
-            line = + 1
-        line = + 1
+            nln
+        nln
         stre = saves.readline(line)
+        nln
+        dex = saves.readline(line)
+        nln
+        con = saves.readline(line)
+        nln
+        inte = saves.readline(line)
+        nln
+        cha = saves.readline(line)
+        nln
+        luck = saves.readline(line)
+        nln
+        defense = saves.readline(line)
+        nln
+        hp = saves.readline(line)
+        nln
+        cash = saves.readline(line)
+        nln
+        spell = saves.readline(line)
+        nln
+        spellpwr = saves.readline(line)
     except:
         time.sleep(2)
         print("You don't have any saved games or you falsely put in the name.")
@@ -162,7 +183,7 @@ if sure is not "y":
         time.sleep(2)
         print("If you are a warrior you pay cash, and if you are a spellcaster you pay spell points.")
         time.sleep(2)
-        print("You can get 3 attack at the moment.")
+        print("You can get 3 attacks at the moment.")
         time.sleep(2)
         print("Your cash is " + str(cash) + ".")
         time.sleep(2)
