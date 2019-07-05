@@ -149,7 +149,13 @@ if sure is not "y":
     sure = input("Would you like me to tell you? y/n")
     if sure is "y":
         time.sleep(2)
-        print("Okay. So, in this game, you have to choose different actions that are listed for you. They determine the path and the survival of your character. They also determine if " + his + " goals will be achieved, what goods they get, and more. The choices will be numbered. Also, you can input these things:")
+        print(
+            "Okay. So, in this game, you have to choose different actions that are listed for you. They determine the"
+            " path and the survival of your character. They also determine if "
+            + his
+            + " goals will be achieved, what goods they get, and more. The choices will be numbered. Also, you can"
+              " input these things:"
+        )
         time.sleep(2)
         print("1. The number of a choice to choose it.")
         time.sleep(2)
@@ -160,15 +166,33 @@ if sure is not "y":
         print("4. The command \"moo/yn\", to give you a lucky choice between yes and no.")
         time.sleep(2)
         print(
-            "5. The command \"moo/yn <number>, <number>\", to generate a random number between the two numbers inputed.")
+            "5. The command \"moo/yn <number>, <number>\", to generate a random number between the two numbers"
+            " inputted."
+        )
         time.sleep(2)
         print("5. The command \"moo/Help\", to open this message.")
         time.sleep(2)
         print("6. The command \"moo/Save\", to save your game and character, and then exit.")
         time.sleep(2)
-        print("You currently cannot use these inputs. When you start playing you can. Now I will teach you how combat works. First, you choose an opponent. Then, you choose your weapon or spell, or you can also choose to punch. (Spells can only be casted if your character has enough mana to cast a spell.) Then, if you are making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of 1 to 6, and then add your strength to that. This is your attack score. If you are making an attack with a spell, then your attack score is determined with your spell power, not your strength. Then, if your attack score is higher than your opponent's defense, you attack and their HP gets deducted by your attack's attack power. If not, nothing happens. Then, if there is anyone else in your party, they go through the process in the order the party would have to be in. Then, the opponents have their attack. The battle cycles until one whole party gets eliminated or the battle ends some other way. Battles change under different circumstances. More will be explained later.")
+        print(
+            "You currently cannot use these inputs. When you start playing you can. Now I will teach you how combat"
+            " works. First, you choose an opponent. Then, you choose your weapon or spell, or you can also choose to"
+            " punch. (Spells can only be casted if your character has enough mana to cast a spell.) Then, if you are"
+            " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
+            " 1 to 6, and then add your strength to that. This is your attack score. If you are making an attack with"
+            " a spell, then your attack score is determined with your spell power, not your strength. Then, if your"
+            " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
+            " attack's attack power. If not, nothing happens. Then, if there is anyone else in your party, they go"
+            " through the process in the order the party would have to be in. Then, the opponents have their attack."
+            " The battle cycles until one whole party gets eliminated or the battle ends some other way. Battles"
+            " change under different circumstances. More will be explained later."
+        )
         time.sleep(2)
-        classe = input("Now, will " + char_name + " be a warrior or spellcaster? This will determine if " + he + " will do stuff like using weapons or punching (warrior) or casting spells and using potions (spellcaster) Tell me \"Warrior\" or \"Spellcaster\".")
+        classe = input(
+            "Now, will " + char_name + " be a warrior or spellcaster? This will determine if "
+            + he
+            + " will do stuff like using weapons or punching (warrior) or casting spells and using potions"
+              " (spellcaster) Tell me \"Warrior\" or \"Spellcaster\".")
         time.sleep(2)
         sure = input("You sure? y/n")
         if sure is not "y":
@@ -193,7 +217,7 @@ if sure is not "y":
                    "1, 8", "1*Halberd", "20", "1, 10", "1*Handaxe", "1", "1, 6", "1*Javelin", "0.5", "1, 6", "1*Mace",
                    "5", "1, 6", "2*Maul", "10", "1, 6", "1*Morningstar", "15", "1, 8", "1*Pike", "5", "1, 10",
                    "1*Rapier", "1, 8", "25", "1*Scimitar", "25", "1, 6", "1*Sickle", "1", "Sling", "0.1", "Spear", "1",
-                   "Staff", "0.2", "Sword", "12", "Trident", "5", "War Pick", "5", "Warhammer", "15", "Whip", "2"];
+                   "Staff", "0.2", "Sword", "12", "Trident", "5", "War Pick", "5", "Warhammer", "15", "Whip", "2"]
         time.sleep(2)
         print("Yay, we have " + char_name + " rolled up!")
         time.sleep(2)
