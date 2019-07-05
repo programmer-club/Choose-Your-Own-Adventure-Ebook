@@ -33,32 +33,34 @@ if sure is "y":
         char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
         line = 1
-        def nln:
-            line = + 1
+
+        def nln():
+            global line
+            line += 1
         while save_name is not char_name:
             save_name = saves.readline(line)
-            nln
-        nln
+            nln()
+        nln()
         stre = saves.readline(line)
-        nln
+        nln()
         dex = saves.readline(line)
-        nln
+        nln()
         con = saves.readline(line)
-        nln
+        nln()
         inte = saves.readline(line)
-        nln
+        nln()
         cha = saves.readline(line)
-        nln
+        nln()
         luck = saves.readline(line)
-        nln
+        nln()
         defense = saves.readline(line)
-        nln
+        nln()
         hp = saves.readline(line)
-        nln
+        nln()
         cash = saves.readline(line)
-        nln
+        nln()
         spell = saves.readline(line)
-        nln
+        nln()
         spellpwr = saves.readline(line)
     except:
         time.sleep(2)
@@ -229,5 +231,6 @@ if sure is not "y":
         print("(__________)  /")
         print("(________(_| /")
         print("(________(_//")
+        # lvl isn't defined here, any input on this?
         stats = "Name: " + char_name + "Level " + str(lvl) + " Focus: " + classe + ""
         print("Here is " + his + " stats: " + stats)
