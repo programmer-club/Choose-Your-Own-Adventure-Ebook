@@ -5,8 +5,6 @@ print("Python version info: ")
 time.sleep(2)
 print(__import__('sys').version_info)
 time.sleep(2)
-print("Copyright C 2019 Programmer Club. All rights reserved. DO NOT DISTRIBUTE")#Seriously.
-time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get started!")
 time.sleep(2)
 sure = input("Do you want to see the credits? y/n")
