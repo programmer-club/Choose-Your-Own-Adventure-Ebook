@@ -33,13 +33,14 @@ if sure is "y":
         char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
         line = 1
-
         def nln():
-            global line
+            global line#"What is global for?" -Isaac
             line += 1
         while save_name is not char_name:
             save_name = saves.readline(line)
             nln()
+        nln()
+        hlth = saves.readline(line)
         nln()
         stre = saves.readline(line)
         nln()
