@@ -5,38 +5,40 @@ print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
 time.sleep(2)
-print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get started!")
+print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
+      " started!")
 time.sleep(2)
 sure = input("Do you want to see the credits? y/n")
 time.sleep(2)
 sure2 = input("You sure?")
 time.sleep(2)
-if sure2 is not "y":
+if sure2 != "y":
     sure = input("Type again, then.")
-while sure is "y":
+while sure == "y":
     print()
     time.sleep(2)
     sure = input("Would you like to replay the credits?")
-if sure is not "y":
+if sure != "y":
     time.sleep(2)
     print("Okay then.")
 time.sleep(2)
 sure = input("Do you want to continue a game? y/n")
 time.sleep(2)
 sure2 = input("You sure? y/n")
-if sure2 is not "y":
+if sure2 != "y":
     time.sleep(2)
     sure = input("Type again, then.")
-if sure is "y":
+if sure == "y":
     try:
         time.sleep(2)
         char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
         line = 1
+
         def nln():
             global line#"What is global for?" -Isaac
             line += 1
-        while save_name is not char_name:
+        while save_name != char_name:
             save_name = saves.readline(line)
             nln()
         nln()
@@ -73,14 +75,14 @@ if sure is "y":
         time.sleep(2)
         print("Anyway, sorry, you will have to play the game from the beginning.")
         sure = "n"
-if sure is not "y":
+if sure != "y":
     time.sleep(2)
     print("Okay.")
     time.sleep(2)
     print("So, do you know what a gamebook is?")
     time.sleep(2)
     sure = input("Tell me if you would like to know. y/n")
-    if sure is "y":
+    if sure == "y":
         time.sleep(2)
         print("A gamebook is a usually a book where someone roleplays in a one-player game.")
         time.sleep(2)
@@ -99,17 +101,17 @@ if sure is not "y":
     char_name = input("Don't use numbers.")
     time.sleep(2)
     sure = input("You sure? y/n")
-    if sure is not "y":
+    if sure != "y":
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
     char_gender = input("Gender? m/f")
     time.sleep(2)
     sure = input("You sure? y/n")
-    if sure is not "y":
+    if sure != "y":
         time.sleep(2)
         char_gender = input("Type " + str(char_name) + "'s gender again, then.")
-    if char_gender is "m":
+    if char_gender == "m":
         he = "he"
         his = "his"
         him = "him"
@@ -150,7 +152,7 @@ if sure is not "y":
     print("If you haven't played this before, you should probably learn the rules.")
     time.sleep(2)
     sure = input("Would you like me to tell you? y/n")
-    if sure is "y":
+    if sure == "y":
         time.sleep(2)
         print(
             "Okay. So, in this game, you have to choose different actions that are listed for you. They determine the"
@@ -198,7 +200,7 @@ if sure is not "y":
               " (spellcaster) Tell me \"Warrior\" or \"Spellcaster\".")
         time.sleep(2)
         sure = input("You sure? y/n")
-        if sure is not "y":
+        if sure != "y":
             time.sleep(2)
             classe = input("Type again.")
         time.sleep(2)
