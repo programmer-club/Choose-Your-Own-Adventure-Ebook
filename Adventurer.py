@@ -110,7 +110,7 @@ if sure != "y":
     sure = input("You sure? y/n")
     if sure != "y":
         time.sleep(2)
-        char_gender = input("Type " + str(char_name) + "'s gender again, then.")
+        char_gender = input("Type {0}'s gender again, then.".format(char_name))
     if char_gender == "m":
         he = "he"
         his = "his"
@@ -120,7 +120,7 @@ if sure != "y":
         his = "her"
         him = "her"
     time.sleep(2)
-    print("So, we are gonna roll up " + char_name + " now...")
+    print("So, we are gonna roll up", char_name, "now...")
     stre = random.randint(1, 6) + random.randint(1, 6) + 6
     dex = random.randint(1, 6) + random.randint(1, 6) + 6
     con = random.randint(1, 6) + random.randint(1, 6) + 6
@@ -133,21 +133,21 @@ if sure != "y":
     spell = random.randint(1, 55) + 25
     spellpwr = random.randint(1, 6) + random.randint(1, 6) + 6
     time.sleep(2)
-    print("Here is " + char_name + "'s stats:")
+    print("Here are", char_name + "'s stats:")
     time.sleep(2)
-    print("Strength: " + str(stre))
+    print("Strength:",stre)
     time.sleep(2)
-    print("Dexterity: " + str(dex))
+    print("Dexterity:", dex)
     time.sleep(2)
-    print("Constitution: " + str(con))
-    print("Intelligence: " + str(inte))
-    print("Charisma: " + str(cha))
-    print("Luck: " + str(luck))
-    print("Defense: " + str(defense))
-    print("HP: " + str(hp))
-    print("Spell Points: " + str(spell))
-    print("Spell Power: " + str(spellpwr))
-    print("Cash: " + str(cash))
+    print("Constitution:", con)
+    print("Intelligence:", inte)
+    print("Charisma:", cha)
+    print("Luck:", luck)
+    print("Defense:", defense)
+    print("HP:", hp)
+    print("Spell Points:", spell)
+    print("Spell Power:", spellpwr)
+    print("Cash:", cash)
     time.sleep(2)
     print("If you haven't played this before, you should probably learn the rules.")
     time.sleep(2)
@@ -156,10 +156,8 @@ if sure != "y":
         time.sleep(2)
         print(
             "Okay. So, in this game, you have to choose different actions that are listed for you. They determine the"
-            " path and the survival of your character. They also determine if "
-            + his
-            + " goals will be achieved, what goods they get, and more. The choices will be numbered. Also, you can"
-              " input these things:"
+            " path and the survival of your character. They also determine if {0} goals will be achieved, what goods"
+            " they get, and more. The choices will be numbered. Also, you can input these things:".format(his)
         )
         time.sleep(2)
         print("1. The number of a choice to choose it.")
@@ -194,10 +192,10 @@ if sure != "y":
         )
         time.sleep(2)
         classe = input(
-            "Now, will " + char_name + " be a warrior or spellcaster? This will determine if "
-            + he
-            + " will do stuff like using weapons or punching (warrior) or casting spells and using potions"
-              " (spellcaster) Tell me \"Warrior\" or \"Spellcaster\".")
+            "Now, will {0} be a warrior or spellcaster? This will determine if {1} will do stuff like using"
+            " weapons or punching (warrior) or casting spells and using potions (spellcaster) Tell me \"Warrior\" or"
+            " \"Spellcaster\".".format(char_name, he)
+        )
         time.sleep(2)
         sure = input("You sure? y/n")
         if sure != "y":
@@ -224,7 +222,7 @@ if sure != "y":
                    "1*Rapier", "1, 8", "25", "1*Scimitar", "25", "1, 6", "1*Sickle", "1", "Sling", "0.1", "Spear", "1",
                    "Staff", "0.2", "Sword", "12", "Trident", "5", "War Pick", "5", "Warhammer", "15", "Whip", "2"]
         time.sleep(2)
-        print("Yay, we have " + char_name + " rolled up!")
+        print("Yay, we have", char_name, "rolled up!")
         time.sleep(2)
         print("         _______")
         print("         |   ( /")
@@ -235,5 +233,5 @@ if sure != "y":
         print("(________(_| /")
         print("(________(_//")
         # lvl isn't defined here, any input on this?
-        stats = "Name: " + char_name + "Level " + str(lvl) + " Focus: " + classe + ""
-        print("Here is " + his + " stats: " + stats)
+        stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
+        print("Here is", his, "stats:", stats)
