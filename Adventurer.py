@@ -38,7 +38,7 @@ if sure == "y":
         def nln():
             global line  # Global here resolves scope conflicts.
             line += 1
-        while save_name != char_name:
+        while save_name != char_name:  # save_name isn't defined either.
             save_name = saves.readline(line)
             nln()
         nln()
