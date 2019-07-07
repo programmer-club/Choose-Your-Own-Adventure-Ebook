@@ -36,7 +36,7 @@ if sure == "y":
         line = 1
 
         def nln():
-            global line#"What is global for?" -Isaac
+            global line  # Global here resolves scope conflicts.
             line += 1
         while save_name != char_name:
             save_name = saves.readline(line)
