@@ -135,7 +135,7 @@ if sure != "y":
     time.sleep(2)
     print("Here are", char_name + "'s stats:")
     time.sleep(2)
-    print("Strength:",stre)
+    print("Strength:", stre)
     time.sleep(2)
     print("Dexterity:", dex)
     time.sleep(2)
