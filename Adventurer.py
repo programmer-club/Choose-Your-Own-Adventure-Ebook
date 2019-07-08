@@ -101,7 +101,7 @@ if sure != "y":
     char_name = input("Don't use numbers.")
     time.sleep(2)
     sure = input("You sure? y/n")
-    if sure != "y":#Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
+    if sure != "y":#Isaac- Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
@@ -111,7 +111,7 @@ if sure != "y":
     if sure != "y":
         time.sleep(2)
         char_gender = input("Type {0}'s gender again, then.".format(char_name))
-    if char_gender == "m":
+    if char_gender == "m":#Isaac- I am getting confused by all these edits, such as ==, {0}, etc. Sorry but I don't think they are necessary.
         he = "he"
         his = "his"
         him = "him"
@@ -155,9 +155,17 @@ if sure != "y":
     if sure == "y":
         time.sleep(2)
         print(
-            "Okay. So, in this game, you have to choose different actions that are listed for you. They determine the"
-            " path and the survival of your character. They also determine if {0} goals will be achieved, what goods"
-            " they get, and more. The choices will be numbered. Also, you can input these things:".format(his)
+            "Okay. So, in this game, you have to choose different actions that are listed for you.")
+        time.sleep(2)
+        print("They determine the"
+            " path and the survival of your character.")
+        time.sleep(2)
+        print("They also determine if {0} goals will be achieved, what goods"
+            " they get, and more.".format(his))
+        time.sleep(2)
+        print("The choices will be numbered.")
+        time.sleep(2)
+        print("Also, you can input these things:"
         )
         time.sleep(2)
         print("1. The number of a choice to choose it.")
@@ -191,10 +199,13 @@ if sure != "y":
             " change under different circumstances. More will be explained later."
         )
         time.sleep(2)
-        classe = input(
-            "Now, will {0} be a warrior or spellcaster? This will determine if {1} will do stuff like using"
-            " weapons or punching (warrior) or casting spells and using potions (spellcaster) Tell me \"Warrior\" or"
-            " \"Spellcaster\".".format(char_name, he)
+        print(
+            "Now, will {0} be a warrior or spellcaster?")
+        time.sleep(2)
+        print("This will determine if {0} will do stuff like using"
+            " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
+        classe = input("Tell me \"Warrior\" or"
+            " \"Spellcaster\".")
         )
         time.sleep(2)
         sure = input("You sure? y/n")
