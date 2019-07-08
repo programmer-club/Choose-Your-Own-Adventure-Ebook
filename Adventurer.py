@@ -36,7 +36,7 @@ if sure == "y":
         line = 1
 
         def nln():
-            global line  # Global here resolves scope conflicts.
+            global line  # Global here resolves scope conflicts. Isaac- What?
             line += 1
         while save_name != char_name:  # save_name isn't defined either.
             save_name = saves.readline(line)
@@ -101,7 +101,7 @@ if sure != "y":
     char_name = input("Don't use numbers.")
     time.sleep(2)
     sure = input("You sure? y/n")
-    if sure != "y":
+    if sure != "y":#Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
