@@ -1,9 +1,15 @@
 import random
 import sys
 import time
+def validate(prmt, optn, msg):
+      valid = False
+      while valid is False:
+            input(str(prmt))
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
+time.sleep(2)
+funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee..."];
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
