@@ -18,31 +18,31 @@ time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
 time.sleep(2)
-sure = input("Do you want to see the credits? y/n")
+sure = validate("Do you want to see the credits? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 time.sleep(2)
-sure2 = input("You sure?")
+sure2 = validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 time.sleep(2)
 if sure2 != "y":
-    sure = input("Type again, then.")
+    sure = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 while sure == "y":
     print()
     time.sleep(2)
-    sure = input("Would you like to replay the credits?")
+    sure = validate("Would you like to replay the credits? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 if sure != "y":
     time.sleep(2)
     print("Okay then.")
 time.sleep(2)
-sure = input("Do you want to continue a game? y/n")
+sure = validate("Do you want to continue a game? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 time.sleep(2)
-sure2 = input("You sure? y/n")
+sure2 = validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 if sure2 != "y":
     time.sleep(2)
-    sure = input("Type again, then.")
+    sure = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 if sure == "y":
     try:
         time.sleep(2)
-        char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
+        char_name = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
         line = 1
 
         def nln():
