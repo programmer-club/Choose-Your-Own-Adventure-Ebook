@@ -2,14 +2,18 @@ import random
 import sys
 import time
 def validate(prmt, optn, msg):
-      valid = False
-      while valid is False:
-            input(str(prmt))
+while True:
+      text = input(prompt)
+      if text in options:
+            return text
+      else:
+           print(str(msg))
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
 time.sleep(2)
-funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee..."];
+funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...", "Setting of nukes for fun...", "Destroying your computer...", "Opening a portal...", "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"];
+print(funny[random.randint(1, 10)])
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
@@ -192,11 +196,22 @@ if sure != "y":
         print("6. The command \"moo/Save\", to save your game and character, and then exit.")
         time.sleep(2)
         print(
-            "You currently cannot use these inputs. When you start playing you can. Now I will teach you how combat"
-            " works. First, you choose an opponent. Then, you choose your weapon or spell, or you can also choose to"
-            " punch. (Spells can only be casted if your character has enough mana to cast a spell.) Then, if you are"
+            "You currently cannot use these inputs.")
+        time.sleep(2)
+        print("When you start playing you can.")
+        time.sleep(2)
+        print("Now I will teach you how combat"
+            " works.")
+        time.sleep(2)
+        print("First, you choose an opponent.")
+        time.sleep(2)
+        print("Then, you choose your weapon or spell, or you can also choose to"
+            " punch. (Spells can only be casted if your character has enough mana to cast a spell.)")
+        time.sleep(2)
+        print("Then, if you are
             " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
-            " 1 to 6, and then add your strength to that. This is your attack score. If you are making an attack with"
+            " 1 to 6, and then add your strength to that.")
+        print("This is your attack score. If you are making an attack with"
             " a spell, then your attack score is determined with your spell power, not your strength. Then, if your"
             " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
             " attack's attack power. If not, nothing happens. Then, if there is anyone else in your party, they go"
