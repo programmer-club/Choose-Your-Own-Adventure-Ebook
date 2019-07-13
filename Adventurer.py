@@ -150,13 +150,21 @@ if sure != "y":
     print("Dexterity:", dex)
     time.sleep(2)
     print("Constitution:", con)
+    time.sleep(2)
     print("Intelligence:", inte)
+    time.sleep(2)
     print("Charisma:", cha)
+    time.sleep(2)
     print("Luck:", luck)
+    time.sleep(2)
     print("Defense:", defense)
+    time.sleep(2)
     print("HP:", hp)
+    time.sleep(2)
     print("Spell Points:", spell)
+    time.sleep(2)
     print("Spell Power:", spellpwr)
+    time.sleep(2)
     print("Cash:", cash)
     time.sleep(2)
     print("If you haven't played this before, you should probably learn the rules.")
@@ -211,14 +219,27 @@ if sure != "y":
         print("Then, if you are
             " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
             " 1 to 6, and then add your strength to that.")
-        print("This is your attack score. If you are making an attack with"
-            " a spell, then your attack score is determined with your spell power, not your strength. Then, if your"
+        time.sleep(2)
+        print("This is your attack score.")
+        time.sleep(2)
+        print("If you are making an attack with"
+            " a spell, then your attack score is determined with your spell power, not your strength.")
+        time.sleep(2)
+        print("Then, if your"
             " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
-            " attack's attack power. If not, nothing happens. Then, if there is anyone else in your party, they go"
-            " through the process in the order the party would have to be in. Then, the opponents have their attack."
-            " The battle cycles until one whole party gets eliminated or the battle ends some other way. Battles"
-            " change under different circumstances. More will be explained later."
-        )
+            " attack's attack power.")
+        time.sleep(2)
+        print("If not, nothing happens.")
+        time.sleep(2)
+        print("Then, if there is anyone else in your party, they go"
+            " through the process in the order the party would have to be in.")
+        time.sleep(2)
+        print("Then, the opponents have their attack.")
+        time.sleep(2)
+        print("The battle cycles until one whole party gets eliminated or the battle ends some other way.") 
+        print("Battles"
+            " change under different circumstances.) 
+        print("More will be explained later.")
         time.sleep(2)
         print(
             "Now, will {0} be a warrior or spellcaster?")
