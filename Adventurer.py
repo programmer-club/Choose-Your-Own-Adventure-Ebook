@@ -1,6 +1,7 @@
 import random
 import sys
 import time
+
 def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please enter a valid input. ", surecheck=False):
     while True:
         text = input(prompt)
@@ -9,12 +10,13 @@ def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please ente
                 return text
         else:
             print(msg)
+
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
 time.sleep(2)
-funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...", "Setting of nukes for fun...", "Destroying your computer...", "Opening a portal...", "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"];
-print(funny[random.randint(0, 0)])
+funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...", "Setting off nukes for fun...", "Destroying your computer...", "Opening a portal...", "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"];
+print(funny[random.randint(0, len(funny))])
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
@@ -274,6 +276,7 @@ if sure != "y":
         print("(________(_| /")
         print("(________(_//")
         # lvl isn't defined here, any input on this?
+        lvl = 1 # assuming lvl starts at 1?
         stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
         print("Here is", his, "stats:", stats)
 
