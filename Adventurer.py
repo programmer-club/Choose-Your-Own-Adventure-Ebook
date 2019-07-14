@@ -5,7 +5,7 @@ def validate(prmt, optn, msg):
     optn2 = optn
     msg2 = msg
     while True:
-      text = input(optn)
+      text = input(prmt)
       if text in options:
             return text
       else:
