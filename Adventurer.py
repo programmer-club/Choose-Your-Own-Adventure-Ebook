@@ -3,7 +3,7 @@ import sys
 import time
 def validate(prmt, optn, msg):
     while True:
-      text = input(prompt)
+      text = input(optn)
       if text in options:
             return text
       else:
@@ -11,13 +11,13 @@ def validate(prmt, optn, msg):
 def validate1():
       validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 def validate2():
-      validate("Type again, then.", optn, str(msg))
+      validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
 time.sleep(2)
 funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...", "Setting of nukes for fun...", "Destroying your computer...", "Opening a portal...", "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"];
-print(funny[random.randint(1, 10)])
+print(funny[random.randint(0, 0)])
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
