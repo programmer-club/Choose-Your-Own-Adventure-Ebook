@@ -1,19 +1,14 @@
 import random
 import sys
 import time
-def validate(prmt, optn, msg):
-    optn2 = optn
-    msg2 = msg
+def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please enter a valid input. ", surecheck=False):
     while True:
-      text = input(prmt)
-      if text in options:
-            return text
-      else:
-           print(str(msg))
-def validate1():
-      validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
-def validate2():
-      validate("Type again, then.", optn2, msg2)
+        text = input(prompt)
+        if text in options:
+            if not surecheck or validate() == 'y':
+                return text
+        else:
+            print(msg)
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
@@ -24,26 +19,17 @@ time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
 time.sleep(2)
-sure = validate("Do you want to see the credits? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+sure = validate("Do you want to see the credits? (y/n)", surecheck=True)
 time.sleep(2)
-sure2 = validate1()
-time.sleep(2)
-if sure2 != "y":
-    sure = validate2()
 while sure == "y":
     print()
     time.sleep(2)
-    sure = validate("Would you like to replay the credits? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+    sure = validate("Would you like to replay the credits? (y/n)")
 if sure != "y":
     time.sleep(2)
     print("Okay then.")
 time.sleep(2)
-sure = validate("Do you want to continue a game? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
-time.sleep(2)
-sure2 = validate1()
-if sure2 != "y":
-    time.sleep(2)
-    sure = validate2()
+sure = validate("Do you want to continue a game? (y/n)", surecheck=True)
 if sure == "y":
     try:
         time.sleep(2)
@@ -97,7 +83,7 @@ if sure != "y":
     time.sleep(2)
     print("So, do you know what a gamebook is?")
     time.sleep(2)
-    sure = validate("Tell me if you would like to know. y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+    sure = validate("Tell me if you would like to know. (y/n)")
     if sure == "y":
         time.sleep(2)
         print("A gamebook is a usually a book where someone roleplays in a one-player game.")
@@ -116,14 +102,14 @@ if sure != "y":
     time.sleep(2)
     char_name = input("Don't use numbers.")
     time.sleep(2)
-    sure = validate1()
+    sure = validate()
     if sure != "y":#Isaac- Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
-    char_gender = validate("Gender? m/f", ("m", "f"), "Sorry, that is not a valid input. Type again.")
+    char_gender = validate("Gender? (m/f)", ("m", "f"))
     time.sleep(2)
-    sure = validate1()
+    sure = validate()
     if sure != "y":
         time.sleep(2)
         char_gender = validate("Type {0}'s gender again, then.".format(char_name), ("m", "f"), "Sorry, that is not a valid input. Type again.")
@@ -175,7 +161,7 @@ if sure != "y":
     time.sleep(2)
     print("If you haven't played this before, you should probably learn the rules.")
     time.sleep(2)
-    sure = validate("Would you like me to tell you? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+    sure = validate("Would you like me to tell you? (y/n)")
     if sure == "y":
         time.sleep(2)
         print(
@@ -255,12 +241,7 @@ if sure != "y":
         print("This will determine if {0} will do stuff like using"
             " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
         classe = validate("Tell me \"Warrior\" or"
-            " \"Spellcaster\".", ("\"Warrior\"", "\"Spellcaster\""), "Sorry, that is not a valid input. Type again.")
-        time.sleep(2)
-        sure = validate1()
-        if sure != "y":
-            time.sleep(2)
-            classe = validate2()
+            " \"Spellcaster\".", ("\"Warrior\"", "\"Spellcaster\""), surecheck=True)
         time.sleep(2)
         print("Okay. You are going to have to choose your attacks.")
         time.sleep(2)
