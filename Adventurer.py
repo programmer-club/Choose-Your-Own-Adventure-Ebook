@@ -11,7 +11,7 @@ while True:
 def validate1():
       validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 def validate2():
-      validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+      validate("Type again, then.", optn, str(msg))
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
@@ -173,7 +173,7 @@ if sure != "y":
     time.sleep(2)
     print("If you haven't played this before, you should probably learn the rules.")
     time.sleep(2)
-    sure = input("Would you like me to tell you? y/n")
+    sure = validate("Would you like me to tell you? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
     if sure == "y":
         time.sleep(2)
         print(
@@ -250,14 +250,14 @@ if sure != "y":
         time.sleep(2)
         print("This will determine if {0} will do stuff like using"
             " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
-        classe = input("Tell me \"Warrior\" or"
-            " \"Spellcaster\".")
+        classe = validate("Tell me \"Warrior\" or"
+            " \"Spellcaster\".", ("\"Warrior\"", "\"Spellcaster\""), "Sorry, that is not a valid input. Type again.")
         )
         time.sleep(2)
         sure = validate1()
         if sure != "y":
             time.sleep(2)
-            classe = input("Type again.")
+            classe = validate2()
         time.sleep(2)
         print("Okay. You are going to have to choose your attacks.")
         time.sleep(2)
@@ -279,7 +279,7 @@ if sure != "y":
                    "1*Rapier", "1, 8", "25", "1*Scimitar", "25", "1, 6", "1*Sickle", "1", "Sling", "0.1", "Spear", "1",
                    "Staff", "0.2", "Sword", "12", "Trident", "5", "War Pick", "5", "Warhammer", "15", "Whip", "2"]
         time.sleep(2)
-        print("Yay, we have", char_name, "rolled up!")
+        print("Yay, we have", char_name, "rolled up!")6
         time.sleep(2)
         print("         _______")
         print("         |   ( /")
