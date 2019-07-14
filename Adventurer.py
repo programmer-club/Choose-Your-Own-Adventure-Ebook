@@ -2,7 +2,7 @@ import random
 import sys
 import time
 def validate(prmt, optn, msg):
-while True:
+    while True:
       text = input(prompt)
       if text in options:
             return text
@@ -220,7 +220,7 @@ if sure != "y":
         print("Then, you choose your weapon or spell, or you can also choose to"
             " punch. (Spells can only be casted if your character has enough mana to cast a spell.)")
         time.sleep(2)
-        print("Then, if you are
+        print("Then, if you are"
             " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
             " 1 to 6, and then add your strength to that.")
         time.sleep(2)
@@ -240,9 +240,11 @@ if sure != "y":
         time.sleep(2)
         print("Then, the opponents have their attack.")
         time.sleep(2)
-        print("The battle cycles until one whole party gets eliminated or the battle ends some other way.") 
+        print("The battle cycles until one whole party gets eliminated or the battle ends some other way.")
+        time.sleep(2)
         print("Battles"
-            " change under different circumstances.) 
+            " change under different circumstances.")
+        time.sleep(2)
         print("More will be explained later.")
         time.sleep(2)
         print(
@@ -252,7 +254,6 @@ if sure != "y":
             " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
         classe = validate("Tell me \"Warrior\" or"
             " \"Spellcaster\".", ("\"Warrior\"", "\"Spellcaster\""), "Sorry, that is not a valid input. Type again.")
-        )
         time.sleep(2)
         sure = validate1()
         if sure != "y":
@@ -279,7 +280,7 @@ if sure != "y":
                    "1*Rapier", "1, 8", "25", "1*Scimitar", "25", "1, 6", "1*Sickle", "1", "Sling", "0.1", "Spear", "1",
                    "Staff", "0.2", "Sword", "12", "Trident", "5", "War Pick", "5", "Warhammer", "15", "Whip", "2"]
         time.sleep(2)
-        print("Yay, we have", char_name, "rolled up!")6
+        print("Yay, we have", char_name, "rolled up!")
         time.sleep(2)
         print("         _______")
         print("         |   ( /")
@@ -292,3 +293,4 @@ if sure != "y":
         # lvl isn't defined here, any input on this?
         stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
         print("Here is", his, "stats:", stats)
+
