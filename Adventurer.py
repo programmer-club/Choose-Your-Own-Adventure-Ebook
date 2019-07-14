@@ -8,6 +8,10 @@ while True:
             return text
       else:
            print(str(msg))
+def validate1():
+      validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+def validate2():
+      validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
@@ -20,10 +24,10 @@ print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventure
 time.sleep(2)
 sure = validate("Do you want to see the credits? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 time.sleep(2)
-sure2 = validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+sure2 = validate1()
 time.sleep(2)
 if sure2 != "y":
-    sure = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+    sure = validate2()
 while sure == "y":
     print()
     time.sleep(2)
@@ -34,15 +38,15 @@ if sure != "y":
 time.sleep(2)
 sure = validate("Do you want to continue a game? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 time.sleep(2)
-sure2 = validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+sure2 = validate1()
 if sure2 != "y":
     time.sleep(2)
-    sure = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+    sure = validate2()
 if sure == "y":
     try:
         time.sleep(2)
         saves = open("saves.txt", "r")
-        char_name = validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+        char_name = validate("Type again, then.", "", "Sorry, I could not find that name in your saves.")
         line = 1
 
         def nln():
@@ -91,7 +95,7 @@ if sure != "y":
     time.sleep(2)
     print("So, do you know what a gamebook is?")
     time.sleep(2)
-    sure = input("Tell me if you would like to know. y/n")
+    sure = validate("Tell me if you would like to know. y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
     if sure == "y":
         time.sleep(2)
         print("A gamebook is a usually a book where someone roleplays in a one-player game.")
@@ -110,17 +114,17 @@ if sure != "y":
     time.sleep(2)
     char_name = input("Don't use numbers.")
     time.sleep(2)
-    sure = input("You sure? y/n")
+    sure = validate1()
     if sure != "y":#Isaac- Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
-    char_gender = input("Gender? m/f")
+    char_gender = validate("Gender? m/f", ("m", "f"), "Sorry, that is not a valid input. Type again.")
     time.sleep(2)
-    sure = input("You sure? y/n")
+    sure = validate1()
     if sure != "y":
         time.sleep(2)
-        char_gender = input("Type {0}'s gender again, then.".format(char_name))
+        char_gender = validate("Type {0}'s gender again, then.".format(char_name), ("m", "f"), "Sorry, that is not a valid input. Type again.")
     if char_gender == "m":#Isaac- I am getting confused by all these edits, such as ==, {0}, etc. Sorry but I don't think they are necessary.
         he = "he"
         his = "his"
@@ -250,7 +254,7 @@ if sure != "y":
             " \"Spellcaster\".")
         )
         time.sleep(2)
-        sure = input("You sure? y/n")
+        sure = validate1()
         if sure != "y":
             time.sleep(2)
             classe = input("Type again.")
