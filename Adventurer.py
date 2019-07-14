@@ -2,6 +2,8 @@ import random
 import sys
 import time
 def validate(prmt, optn, msg):
+    optn2 = optn
+    msg2 = msg
     while True:
       text = input(optn)
       if text in options:
@@ -11,7 +13,7 @@ def validate(prmt, optn, msg):
 def validate1():
       validate("You sure? y/n", ("y", "n"), "Sorry, that is not a valid input. Type again.")
 def validate2():
-      validate("Type again, then.", ("y", "n"), "Sorry, that is not a valid input. Type again.")
+      validate("Type again, then.", optn2, msg2)
 print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
