@@ -15,7 +15,11 @@ print("Python version info: ")
 time.sleep(2)
 print(sys.version_info)
 time.sleep(2)
-funny = ["Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...", "Setting off nukes for fun...", "Destroying your computer...", "Opening a portal...", "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"];
+funny = [
+    "Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...",
+    "Setting off nukes for fun...", "Destroying your computer...", "Opening a portal...",
+    "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"
+]
 print(random.choice(funny))
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
@@ -242,8 +246,10 @@ if sure != "y":
         time.sleep(2)
         print("This will determine if {0} will do stuff like using"
             " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
-        classe = validate("Tell me \"Warrior\" or"
-            " \"Spellcaster\".", ("\"Warrior\"", "\"Spellcaster\""), surecheck=True)
+        classe = validate(
+            "Tell me \"Warrior\" or" \"Spellcaster\".",
+            ("\"Warrior\"", "\"Spellcaster\""), surecheck=True
+        )
         time.sleep(2)
         print("Okay. You are going to have to choose your attacks.")
         time.sleep(2)
@@ -276,7 +282,6 @@ if sure != "y":
         print("(________(_| /")
         print("(________(_//")
         # lvl isn't defined here, any input on this?
-        lvl = 1 # assuming lvl starts at 1?
+        lvl = 1  # assuming lvl starts at 1?
         stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
         print("Here is", his, "stats:", stats)
-
