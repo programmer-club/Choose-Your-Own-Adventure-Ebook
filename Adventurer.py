@@ -3,6 +3,7 @@ import sys
 import time
 
 
+# Consider making at lease some of these arguments keyword-only for clarity.
 def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please enter a valid input. ", surecheck=False):
     while True:
         text = input(prompt)
@@ -14,7 +15,7 @@ def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please ente
 
 
 print("Python version info: ")
-time.sleep(2)
+time.sleep(2)  # Can we have less of these? We don't need 82, surely...
 print(sys.version_info)
 time.sleep(2)
 funny = [
@@ -111,7 +112,7 @@ if sure != "y":
     char_name = input("Don't use numbers.")
     time.sleep(2)
     sure = validate()
-    if sure != "y":  # Never use is for comparison between immutable objects.
+    if sure != "y":  # Never use is or is not for comparison between immutable objects.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
@@ -281,7 +282,6 @@ if sure != "y":
         print("(__________)  /")
         print("(________(_| /")
         print("(________(_//")
-        # lvl isn't defined here, any input on this?
         lvl = 1  # assuming lvl starts at 1?
         stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
         print("Here is", his, "stats:", stats)
