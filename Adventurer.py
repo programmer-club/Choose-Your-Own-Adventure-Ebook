@@ -2,6 +2,7 @@ import random
 import sys
 import time
 
+
 def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please enter a valid input. ", surecheck=False):
     while True:
         text = input(prompt)
@@ -10,6 +11,7 @@ def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please ente
                 return text
         else:
             print(msg)
+
 
 print("Python version info: ")
 time.sleep(2)
@@ -73,7 +75,7 @@ if sure == "y":
         spell = saves.readline(line)
         nln()
         spellpwr = saves.readline(line)
-    except:
+    except OSError:
         time.sleep(2)
         print("You don't have any saved games or you falsely put in the name.")
         time.sleep(2)
@@ -109,7 +111,7 @@ if sure != "y":
     char_name = input("Don't use numbers.")
     time.sleep(2)
     sure = validate()
-    if sure != "y":#Isaac- Why do you keep adding !=s? is works too, right? Sorry, but I am weirdly going for is.
+    if sure != "y":  # Never use is for comparison between immutable objects.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
@@ -118,8 +120,11 @@ if sure != "y":
     sure = validate()
     if sure != "y":
         time.sleep(2)
-        char_gender = validate("Type {0}'s gender again, then.".format(char_name), ("m", "f"), "Sorry, that is not a valid input. Type again.")
-    if char_gender == "m":#Isaac- I am getting confused by all these edits, such as ==, {0}, etc. Sorry but I don't think they are necessary.
+        char_gender = validate(
+            "Type {0}'s gender again, then.".format(char_name), ("m", "f"),
+            "Sorry, that is not a valid input. Type again."
+        )  # This is all in the name of readability...
+    if char_gender == "m":
         he = "he"
         his = "his"
         him = "him"
@@ -173,16 +178,13 @@ if sure != "y":
         print(
             "Okay. So, in this game, you have to choose different actions that are listed for you.")
         time.sleep(2)
-        print("They determine the"
-            " path and the survival of your character.")
+        print("They determine the path and the survival of your character.")
         time.sleep(2)
-        print("They also determine if {0} goals will be achieved, what goods"
-            " they get, and more.".format(his))
+        print("They also determine if {0} goals will be achieved, what goods they get, and more.".format(his))
         time.sleep(2)
         print("The choices will be numbered.")
         time.sleep(2)
-        print("Also, you can input these things:"
-        )
+        print("Also, you can input these things:")
         time.sleep(2)
         print("1. The number of a choice to choose it.")
         time.sleep(2)
@@ -206,46 +208,44 @@ if sure != "y":
         time.sleep(2)
         print("When you start playing you can.")
         time.sleep(2)
-        print("Now I will teach you how combat"
-            " works.")
+        print("Now I will teach you how combat works.")
         time.sleep(2)
         print("First, you choose an opponent.")
         time.sleep(2)
-        print("Then, you choose your weapon or spell, or you can also choose to"
-            " punch. (Spells can only be casted if your character has enough mana to cast a spell.)")
+        print("Then, you choose your weapon or spell, or you can also choose to punch. (Spells can only be casted if"
+              " your character has enough mana to cast a spell.)")
         time.sleep(2)
         print("Then, if you are"
-            " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
-            " 1 to 6, and then add your strength to that.")
+              " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range"
+              " of 1 to 6, and then add your strength to that.")
         time.sleep(2)
         print("This is your attack score.")
         time.sleep(2)
         print("If you are making an attack with"
-            " a spell, then your attack score is determined with your spell power, not your strength.")
+              " a spell, then your attack score is determined with your spell power, not your strength.")
         time.sleep(2)
         print("Then, if your"
-            " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
-            " attack's attack power.")
+              " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
+              " attack's attack power.")
         time.sleep(2)
         print("If not, nothing happens.")
         time.sleep(2)
         print("Then, if there is anyone else in your party, they go"
-            " through the process in the order the party would have to be in.")
+              " through the process in the order the party would have to be in.")
         time.sleep(2)
         print("Then, the opponents have their attack.")
         time.sleep(2)
         print("The battle cycles until one whole party gets eliminated or the battle ends some other way.")
         time.sleep(2)
         print("Battles"
-            " change under different circumstances.")
+              " change under different circumstances.")
         time.sleep(2)
         print("More will be explained later.")
         time.sleep(2)
-        print(
-            "Now, will {0} be a warrior or spellcaster?")
+        print("Now, will {0} be a warrior or spellcaster?")
         time.sleep(2)
         print("This will determine if {0} will do stuff like using"
-            " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
+              " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
         classe = validate(
             "Tell me \"Warrior\" or" \"Spellcaster\".",
             ("\"Warrior\"", "\"Spellcaster\""), surecheck=True
