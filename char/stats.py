@@ -22,12 +22,8 @@ def pc_roll():
         # discard lowest die
         dice.sort()
         del dice[0]
-        # sum up all the remaining dice
-        total = 0
-        for die in dice:
-            total += die
-        # store total
-        results.append(total)
+
+        results.append(sum(dice))
     return results
 
 
