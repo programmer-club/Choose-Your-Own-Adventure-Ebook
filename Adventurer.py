@@ -1,42 +1,53 @@
 import random
 import sys
 import time
+
+
+# Consider making at lease some of these arguments keyword-only for clarity.
+def validate(prompt="Are you sure? (y/n) ", options=('y', 'n'), msg="Please enter a valid input. ", surecheck=False):
+    while True:
+        text = input(prompt)
+        if text in options:
+            if not surecheck or validate() == 'y':
+                return text
+        else:
+            print(msg)
+
+
 print("Python version info: ")
-time.sleep(2)
+time.sleep(2)  # Can we have less of these? We don't need 82, surely...
 print(sys.version_info)
+time.sleep(2)
+funny = [
+    "Gluten Free", "100% awesomeness.", "Something will happen. Guaranteed.", "Making your computer coffee...",
+    "Setting off nukes for fun...", "Destroying your computer...", "Opening a portal...",
+    "Getting sprockets 97%... Finding user installler 99%... Done.", "Measuring the sun...", "Beep boop"
+]
+print(random.choice(funny))
 time.sleep(2)
 print("Hello! Welcome to the Programmer Club Gamebook Adventure Ebook, Adventurer v1, Python edition! Let's get"
       " started!")
 time.sleep(2)
-sure = input("Do you want to see the credits? y/n")
+sure = validate("Do you want to see the credits? (y/n)", surecheck=True)
 time.sleep(2)
-sure2 = input("You sure?")
-time.sleep(2)
-if sure2 != "y":
-    sure = input("Type again, then.")
 while sure == "y":
     print()
     time.sleep(2)
-    sure = input("Would you like to replay the credits?")
+    sure = validate("Would you like to replay the credits? (y/n)")
 if sure != "y":
     time.sleep(2)
     print("Okay then.")
 time.sleep(2)
-sure = input("Do you want to continue a game? y/n")
-time.sleep(2)
-sure2 = input("You sure? y/n")
-if sure2 != "y":
-    time.sleep(2)
-    sure = input("Type again, then.")
+sure = validate("Do you want to continue a game? (y/n)", surecheck=True)
 if sure == "y":
     try:
         time.sleep(2)
-        char_name = input("What was your character's name?")
         saves = open("saves.txt", "r")
+        char_name = validate("Type again, then.", "", "Sorry, I could not find that name in your saves.")
         line = 1
 
         def nln():
-            global line  # Global here resolves scope conflicts.
+            global line  # Global here resolves scope conflicts. Isaac- What?
             line += 1
         while save_name != char_name:  # save_name isn't defined either.
             save_name = saves.readline(line)
@@ -65,7 +76,7 @@ if sure == "y":
         spell = saves.readline(line)
         nln()
         spellpwr = saves.readline(line)
-    except:
+    except OSError:
         time.sleep(2)
         print("You don't have any saved games or you falsely put in the name.")
         time.sleep(2)
@@ -81,7 +92,7 @@ if sure != "y":
     time.sleep(2)
     print("So, do you know what a gamebook is?")
     time.sleep(2)
-    sure = input("Tell me if you would like to know. y/n")
+    sure = validate("Tell me if you would like to know. (y/n)")
     if sure == "y":
         time.sleep(2)
         print("A gamebook is a usually a book where someone roleplays in a one-player game.")
@@ -100,17 +111,20 @@ if sure != "y":
     time.sleep(2)
     char_name = input("Don't use numbers.")
     time.sleep(2)
-    sure = input("You sure? y/n")
-    if sure != "y":
+    sure = validate()
+    if sure != "y":  # Never use is or is not for comparison between immutable objects.
         time.sleep(2)
         char_name = input("Type the name again, then.")
     time.sleep(2)
-    char_gender = input("Gender? m/f")
+    char_gender = validate("Gender? (m/f)", ("m", "f"))
     time.sleep(2)
-    sure = input("You sure? y/n")
+    sure = validate()
     if sure != "y":
         time.sleep(2)
-        char_gender = input("Type {0}'s gender again, then.".format(char_name))
+        char_gender = validate(
+            "Type {0}'s gender again, then.".format(char_name), ("m", "f"),
+            "Sorry, that is not a valid input. Type again."
+        )  # This is all in the name of readability...
     if char_gender == "m":
         he = "he"
         his = "his"
@@ -140,25 +154,38 @@ if sure != "y":
     print("Dexterity:", dex)
     time.sleep(2)
     print("Constitution:", con)
+    time.sleep(2)
     print("Intelligence:", inte)
+    time.sleep(2)
     print("Charisma:", cha)
+    time.sleep(2)
     print("Luck:", luck)
+    time.sleep(2)
     print("Defense:", defense)
+    time.sleep(2)
     print("HP:", hp)
+    time.sleep(2)
     print("Spell Points:", spell)
+    time.sleep(2)
     print("Spell Power:", spellpwr)
+    time.sleep(2)
     print("Cash:", cash)
     time.sleep(2)
     print("If you haven't played this before, you should probably learn the rules.")
     time.sleep(2)
-    sure = input("Would you like me to tell you? y/n")
+    sure = validate("Would you like me to tell you? (y/n)")
     if sure == "y":
         time.sleep(2)
         print(
-            "Okay. So, in this game, you have to choose different actions that are listed for you. They determine the"
-            " path and the survival of your character. They also determine if {0} goals will be achieved, what goods"
-            " they get, and more. The choices will be numbered. Also, you can input these things:".format(his)
-        )
+            "Okay. So, in this game, you have to choose different actions that are listed for you.")
+        time.sleep(2)
+        print("They determine the path and the survival of your character.")
+        time.sleep(2)
+        print("They also determine if {0} goals will be achieved, what goods they get, and more.".format(his))
+        time.sleep(2)
+        print("The choices will be numbered.")
+        time.sleep(2)
+        print("Also, you can input these things:")
         time.sleep(2)
         print("1. The number of a choice to choose it.")
         time.sleep(2)
@@ -178,29 +205,52 @@ if sure != "y":
         print("6. The command \"moo/Save\", to save your game and character, and then exit.")
         time.sleep(2)
         print(
-            "You currently cannot use these inputs. When you start playing you can. Now I will teach you how combat"
-            " works. First, you choose an opponent. Then, you choose your weapon or spell, or you can also choose to"
-            " punch. (Spells can only be casted if your character has enough mana to cast a spell.) Then, if you are"
-            " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range of"
-            " 1 to 6, and then add your strength to that. This is your attack score. If you are making an attack with"
-            " a spell, then your attack score is determined with your spell power, not your strength. Then, if your"
-            " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
-            " attack's attack power. If not, nothing happens. Then, if there is anyone else in your party, they go"
-            " through the process in the order the party would have to be in. Then, the opponents have their attack."
-            " The battle cycles until one whole party gets eliminated or the battle ends some other way. Battles"
-            " change under different circumstances. More will be explained later."
-        )
+            "You currently cannot use these inputs.")
         time.sleep(2)
-        classe = input(
-            "Now, will {0} be a warrior or spellcaster? This will determine if {1} will do stuff like using"
-            " weapons or punching (warrior) or casting spells and using potions (spellcaster) Tell me \"Warrior\" or"
-            " \"Spellcaster\".".format(char_name, he)
-        )
+        print("When you start playing you can.")
         time.sleep(2)
-        sure = input("You sure? y/n")
-        if sure != "y":
-            time.sleep(2)
-            classe = input("Type again.")
+        print("Now I will teach you how combat works.")
+        time.sleep(2)
+        print("First, you choose an opponent.")
+        time.sleep(2)
+        print("Then, you choose your weapon or spell, or you can also choose to punch. (Spells can only be casted if"
+              " your character has enough mana to cast a spell.)")
+        time.sleep(2)
+        print("Then, if you are"
+              " making an attack with a weapon or punching, you add a random range of 1 to 6 to another random range"
+              " of 1 to 6, and then add your strength to that.")
+        time.sleep(2)
+        print("This is your attack score.")
+        time.sleep(2)
+        print("If you are making an attack with"
+              " a spell, then your attack score is determined with your spell power, not your strength.")
+        time.sleep(2)
+        print("Then, if your"
+              " attack score is higher than your opponent's defense, you attack and their HP gets deducted by your"
+              " attack's attack power.")
+        time.sleep(2)
+        print("If not, nothing happens.")
+        time.sleep(2)
+        print("Then, if there is anyone else in your party, they go"
+              " through the process in the order the party would have to be in.")
+        time.sleep(2)
+        print("Then, the opponents have their attack.")
+        time.sleep(2)
+        print("The battle cycles until one whole party gets eliminated or the battle ends some other way.")
+        time.sleep(2)
+        print("Battles"
+              " change under different circumstances.")
+        time.sleep(2)
+        print("More will be explained later.")
+        time.sleep(2)
+        print("Now, will {0} be a warrior or spellcaster?")
+        time.sleep(2)
+        print("This will determine if {0} will do stuff like using"
+              " weapons or punching (warrior) or casting spells and using potions (spellcaster).".format(char_name))
+        classe = validate(
+            "Tell me \"Warrior\" or" \"Spellcaster\".",
+            ("\"Warrior\"", "\"Spellcaster\""), surecheck=True
+        )
         time.sleep(2)
         print("Okay. You are going to have to choose your attacks.")
         time.sleep(2)
@@ -232,6 +282,6 @@ if sure != "y":
         print("(__________)  /")
         print("(________(_| /")
         print("(________(_//")
-        # lvl isn't defined here, any input on this?
+        lvl = 1  # assuming lvl starts at 1?
         stats = "Name: {0}:Level{1} Focus: {2}".format(char_name, lvl, classe)
         print("Here is", his, "stats:", stats)
