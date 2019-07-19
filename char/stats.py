@@ -19,11 +19,10 @@ def pc_roll():
         dice = []
         for j in range(4):
             dice.append(randint(1, 6))
-        # discard lowest die
-        dice.sort()
-        del dice[0]
 
-        results.append(sum(dice))
+        dice.sort()
+
+        results.append(sum(dice[1:]))
     return results
 
 
